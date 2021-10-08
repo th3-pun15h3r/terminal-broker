@@ -1,0 +1,577 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'lux/css/style1.css' %}">
+    <title>Luxd</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white d-mb-none">
+        <a a href=""><img src="{% static '/img/terminallogo.png' %}" width="200px" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Buy</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Rent</a>
+                </li>           
+                <li class="nav-item">
+                <a class="nav-link" href="#">Sell</a>
+                </li>
+                <li class="nav-link-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Launch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Explore</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mortgage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Commercial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Shortlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Saved search</a>
+                </li>           
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
+                </li>               
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login_view' %}">Login</a>
+                </li>               
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner-section position-relative">
+        <div class="d-mb-none">
+            <button type="button" class="btn btn-primary residential">Broker Terminal</button>
+        </div>
+        <p class="text-white text-center logo-text">Luxdubai</p>
+        <p class="title text-white text-center">Dubai’s Finest<br class="d-mb-block" /> Property Search</p>
+        <div class="tab-section">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" id="home-tab" data-toggle="tab" href="#buy" role="tab" aria-controls="home" aria-selected="true">Buy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="profile-tab" data-toggle="tab" href="#rent" role="tab" aria-controls="profile" aria-selected="false">Rent</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="contact-tab" data-toggle="tab" href="#property-value" role="tab" aria-controls="contact" aria-selected="false">Property Value</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="buy" role="tabpanel" aria-labelledby="home-tab">                        
+                        <div class="input-group">
+                            <img src="{% static 'lux/img/search.png' %}" alt="Search" class="position-absolute searchImg">
+                            <input type="text" class="form-control border-radius-5" placeholder="Search for an MRT, project or area">
+                            <button type="button" class="btn btn-primary position-absolute d-mb-none">Search</button>
+                        </div>
+                        <div class="filter-group d-flex justify-content-center d-mb-none">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Any price
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Properties
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Beds
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="input-group">
+                            <img src="./img/search.png" alt="Search" class="position-absolute searchImg">
+                            <input type="text" class="form-control border-radius-5" placeholder="Search for an MRT, project or area">
+                            <button type="button" class="btn btn-primary position-absolute d-mb-none">Search</button>
+                        </div>
+                        <div class="filter-group d-flex justify-content-center d-mb-none">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Any price
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Properties
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Beds
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="property-value" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="input-group">
+                            <img src="./img/search.png" alt="Search" class="position-absolute searchImg">
+                            <input type="text" class="form-control border-radius-5" placeholder="Search for an MRT, project or area">
+                            <button type="button" class="btn btn-primary position-absolute d-mb-none">Search</button>
+                        </div>
+                        <div class="filter-group d-flex justify-content-center d-mb-none">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Any price
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Properties
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="any-price" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    All Beds
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="any-price">
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                  <a class="dropdown-item" href="#">item</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>              
+        </div>
+        <div class="banner-footer d-mb-none">
+            <p class="text-white mb-0 text-center">LATEST OR TRENDING NEWS AND OFFERS WILL BE SHOWN HERE!</p>
+        </div>
+        <div class="rsvp-section bg-white">
+            <div class="img-wrapper">
+                <img src="{% static 'lux/img/rsvp.png' %}" alt="RSVP" class="d-mb-none">
+                <img src="{% static 'lux/img/rsvp-mobile.png' %}" alt="RSVP" class="rsvp-mobile">
+                <img src="{% static 'lux/img/right-anchor.png' %}" alt="Right" class="ml-3">
+            </div>
+            <p class="font-size-18 font-weight-bold mb-0 mt-3">RSVP here for exclusive promos</p>
+        </div>
+    </div>
+
+    <div class="category-section d-flex justify-content-around">
+        <div class="category-item d-block text-center">
+            <img src="{% static 'lux/img/star.png' %}" alt="Star">
+            <p class="mb-0 mt-2 text-center">Must See</p>
+        </div>
+        <div class="category-item d-block text-center">
+            <img src="{% static 'lux/img/villa.png' %}" alt="Star">
+            <p class="mb-0 mt-2 text-center">Villas For Sale</p>
+        </div>
+        <div class="category-item d-block text-center">
+            <img src="{% static 'lux/img/apt.png' %}" alt="Star">
+            <p class="mb-0 mt-2 text-center">Apt. For Sale</p>
+        </div>
+        <div class="category-item d-block text-center">
+            <img src="{% static 'lux/img/rent.png' %}" alt="Star">
+            <p class="mb-0 mt-2 text-center">Rental Units</p>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <p class="section-title">
+            Featured projects
+        </p>        
+        <div class="section-content d-flex justify-content-between custom-scrollbar">
+            {% for val in fet %}
+            <div class="card">
+                <img class="card-img-top" src="{{val.featureimage}}" alt="Featured Project 1">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title mb-2">{{val.name}}</h5>
+                            <p class="card-note mb-2">{{val.Location}}</p>
+                            <p class="mb-2">Villa . Starting from <span class="font-weight-bold">{{val.2}}</span></p>
+                            <p class="mb-0">{{val.1}}{{val.3}}</p>                           
+                        </div>
+                        <div class="d-flex">
+                            <img src="{% static 'lux/img/featured-brand.png' %}" alt="Brand" class="mt-auto brand-img">
+                        </div>
+                    </div>                                            
+                </div>
+            </div>
+            {% endfor %}
+            <div class="card">
+                <img class="card-img-top" src="{% static 'lux/img/featured-2.png' %}" alt="Featured Project 1">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5 class="card-title mb-2">Dubai Hills Grove and Views</h5>
+                            <p class="card-note mb-2">Dubai Hills Estate</p>
+                            <p class="mb-2">Villa . Starting from <span class="font-weight-bold">AED 25,601,776</span></p>
+                            <p class="mb-0">20,311 Sqft. . 4 bedrooms</p>                           
+                        </div>
+                        <div class="d-flex">
+                            <img src="{% static 'lux/img/featured-brand.png' %}" alt="Brand" class="mt-auto brand-img">
+                        </div>
+                    </div>                                            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+    
+    <div class="popular-section">
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="section-title">
+                Popular projects
+            </p>
+            <a href="#" class="more-link d-mb-none">See more</a>
+            <a href="#" class="more-link d-mb-block">See all</a>
+        </div>
+        <div class="section-content d-flex justify-content-between row custom-scrollbar">
+            {% for values in feature %}
+            <div class="col-md-3">
+                <div class="card w-100">
+                    <img class="card-img-top" src="{{values.featureimage}}" alt="Featured Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">{{values.name}}</h5>
+                        <p class="mb-2">{{values.Location}}</p>                        
+                        <p class="mb-0">Villa . Starting from {{values.2}}</p>                   
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="find-form-section d-flex justify-content-between">
+        <div class="form-wrapper">
+            <p class="section-title">
+                Find your property value instantly
+            </p>
+            <p>
+                With Luxdubai’s  Property Value calculator, get the latest estimate of your home value and track your property to get notified on updates.
+            </p>
+            <div class="input-group mt-4">
+                <img src="{% static 'lux/img/search.png' %}" alt="Search" class="position-absolute searchImg">
+                <input type="text" class="form-control border-radius-5" placeholder="Enter your property address or postal code">
+                <button type="button" class="btn btn-primary position-absolute d-mb-none">Calculate property value</button>
+            </div>
+            <button type="button" class="btn btn-primary d-mb-block mt-4 w-100">
+                Calculate property value
+            </button>
+            <p class="d-mb-block mt-4 mb-0">Already have an account? <a href="#">Sign in</a></p>
+        </div>
+        <div class="map-section">
+            <img src="{% static 'lux/img/map.png' %}" alt="map" class="w-100">
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="listings-section pt-0">
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="section-title">
+                Popular Listings
+            </p>            
+            <a href="#" class="more-link d-mb-block">See all</a>
+        </div>
+        <div class="section-content d-flex justify-content-between row custom-scrollbar">
+            {% for value in trending %}
+            <div class="col-md-3">
+                <div class="card w-100">
+                    <img class="card-img-top" src="{{value.featureimage}}" alt="Featured Project 1">
+                    <div class="card-body">
+                        <p class="listing-label mb-1">APARTMENT FOR SALE</p>
+                        <h5 class="card-title mb-2 font-weight-bold">{{value.2}}</h5>
+                        <p class="mb-2">{{value.name}}</p>                        
+                        <p class="mb-0">{{value.1}}{{value.3}}</p>                   
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="launches-section d-flex justify-content-between">
+        <div>
+            <p class="section-title">Latest New Launches</p>
+            <p class="mb-0">Don’t miss out on these popular New<br/>Launched Projects in Dubai.</p>
+            <a href="#" class="all-link d-flex d-mb-none">See all</a>
+        </div>
+        <div>
+            <p class="column-title">New Projects announcements</p>
+            <p class="mb-0">Armani Residences</p>
+            <p class="mb-0">Burj Crown</p>
+            <p class="mb-0">Downtown Views II</p>
+            <p class="mb-0">Opera Grand</p>
+        </div>
+        <div>
+            <p class="column-title">Upcoming launches</p>
+            <p class="mb-0">Azalea Villas</p>
+            <p class="mb-0">Casa Villas</p>
+            <p class="mb-0">Lila Villas</p>
+            <p class="mb-0">Golf Suites</p>
+            <p class="mb-0">Golf Ville</p>
+        </div>
+        <img src="{% static 'lux/img/launches.png' %}" alt="Apt" class="position-absolute">
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="explore-section position-relative">
+        <p class="text-center section-title">Explore Luxdubai </p>
+        <div class="section-content d-flex justify-content-between row d-mb-none">
+            <div class="col-md-3">
+                <div class="card">
+                    <p class="card-title text-center">Buy property</p>
+                    <div class="text-center">
+                        <img src="{% static 'lux/img/explore-1.png' %}" alt="Buy">
+                    </div>
+                    <p class="desciption text-center">
+                        If you’re trying to find your ideal home, Luxdubai is the best place to seek out the newest resale properties with our user-friendly database of properties purchasable like
+                        <a href="#">Executive Villas</a>, <a href="#">Condos</a> and <a href="#">Townhouses purchasable</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <p class="card-title text-center">Property rentals</p>
+                    <div class="text-center">
+                        <img src="{% static 'lux/img/explore-2.png' %}" alt="Buy">
+                    </div>
+                    <p class="desciption text-center">
+                        Dive into the newest rental properties with our comprehensive rental properties library where you'll find the newest
+                        <a href="#">HDBs for Rent, Executive Villas for Rent, Townhouses for Rent, Condos for Rent. </a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <p class="card-title text-center">New Launch projects</p>
+                    <div class="text-center">
+                        <img src="{% static 'lux/img/explore-3.png' %}" alt="Buy">
+                    </div>
+                    <p class="desciption text-center">
+                        In our New Launch projects area, you can track down the most recent <a href="#">New Launch</a> properties available to be purchased, alongside the most blazing property news on forthcoming ventures and all you need to think about new townhouse dispatches in Dubai.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <p class="card-title text-center">Explore Dubai</p>
+                    <div class="text-center">
+                        <img src="{% static 'lux/img/explore-4.png' %}" alt="Buy">
+                    </div>
+                    <p class="desciption text-center">
+                        Still uncertain with regards to where you need to live? Peruse our devoted catalogs like our <a href="#">Neighborhood Directory, MRT Directory , Condo Directory</a> and and get all the most recent news and data that you need to illuminate your home purchasing measure .
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="chat position-absolute d-mb-none"><img src="{% static 'lux/img/Chat.png' %}" alt="Chat"></a>
+        <div id="explore" class="carousel slide explore-carousel" data-ride="carousel">
+            <div class="carousel-inner">                
+                <div class="carousel-item">
+                    <div class="card">                        
+                        <div class="text-center">
+                            <img src="{% static 'lux/img/explore-1.png' %}" alt="Buy">
+                        </div>
+                        <p class="card-title text-center">Buy property</p>
+                        <p class="desciption text-center">
+                            If you’re trying to find your ideal home, Luxdubai is the best place to seek out the newest resale properties with our user-friendly database of properties purchasable like
+                            <a href="#">Executive Villas</a>, <a href="#">Condos</a> and <a href="#">Townhouses purchasable</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">                        
+                        <div class="text-center">
+                            <img src="./img/explore-2.png" alt="Buy">
+                        </div>
+                        <p class="card-title text-center">Property rentals</p>
+                        <p class="desciption text-center">
+                            Dive into the newest rental properties with our comprehensive rental properties library where you'll find the newest
+                            <a href="#">HDBs for Rent, Executive Villas for Rent, Townhouses for Rent, Condos for Rent. </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">                        
+                        <div class="text-center">
+                            <img src="{% static 'lux/img/explore-3.png' %}" alt="Buy">
+                        </div>
+                        <p class="card-title text-center">New Launch projects</p>
+                        <p class="desciption text-center">
+                            In our New Launch projects area, you can track down the most recent <a href="#">New Launch</a> properties available to be purchased, alongside the most blazing property news on forthcoming ventures and all you need to think about new townhouse dispatches in Dubai.
+                        </p>
+                    </div>
+                </div>                
+                <div class="carousel-item active">
+                    <div class="card">                        
+                        <div class="text-center">
+                            <img src="{% static 'lux/img/explore-4.png' %}" alt="Buy">
+                        </div>
+                        <p class="card-title text-center">Explore Dubai</p>
+                        <p class="desciption text-center">
+                            Still uncertain with regards to where you need to live? Peruse our devoted catalogs like our <a href="#">Neighborhood Directory, MRT Directory , Condo Directory</a> and and get all the most recent news and data that you need to illuminate your home purchasing measure .
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#explore" data-slide="prev">                
+                <img src="{% static 'lux/img/left.png' %}" alt="Prev">
+            </a>
+            <a class="carousel-control-next" href="#explore" data-slide="next">
+                <img src="{% static 'lux/img/right.png' %}" alt="Next">
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="links-wrapper d-flex w-100 flex-wrap">
+            <div class="link-item welcome">
+                <p class="link-item-title text-white mb-4">
+                    Welcome to Luxdubai!
+                </p>
+                <div>
+                    <a href="#">Luxdubai is Dubai’s finest property portal.</a>
+                    <a href="#">You will find the best range of options here with us as per your desire.</a>
+                </div>
+            </div>
+            <div class="link-item company">
+                <p class="link-item-title text-white mb-4">
+                    Company
+                </p>
+                <div>
+                    <a href="#">About us</a>
+                    <a href="#">Ask us anything</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Terms And Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="link-item discover">
+                <p class="link-item-title text-white mb-4">
+                    Discover
+                </p>
+                <div>
+                    <a href="#">Researcher</a>
+                    <a href="#">Home Reports for Agents</a>
+                    <a href="#">Land Sales</a>
+                    <a href="#">Advertise with Luxdubai</a>
+                    <a href="#">Sitemap</a>                   
+                </div>
+            </div>
+            <div class="link-item contact">
+                <p class="link-item-title text-white mb-4">
+                    Contact
+                </p>
+                <div>
+                    <a href="#">Enquiries</a>
+                    <a href="#">Phone # :</a>
+                    <a href="#">+971-559739284</a>
+                    <a href="#">+971-508978709</a>
+                </div>
+            </div>
+            <div class="link-item countries">
+                <p class="link-item-title text-white mb-4">
+                    Countries
+                </p>
+                <div>
+                    <a href="#">UAE</a>                        
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer-divider"></div>
+        <div class="social-wrapper d-flex justify-content-between align-items-center">
+            <div class="socials">
+                <a href=""><img src="{% static 'lux/img/telegram.png' %}" alt="Telegram"></a>
+                <a href=""><img src="{% static 'lux/img/youtube.png' %}" alt="Youtube"></a>
+                <a href=""><img src="{% static 'lux/img/twitter.png' %}" alt="Twitter"></a>
+                <a href=""><img src="{% static 'lux/img/facebook.png' %}" alt="facebook"></a>
+                <a href=""><img src="{% static 'lux/img/linkdin.png' %}" alt="Linkden"></a>
+                <a href=""><img src="{% static 'lux/img/instagram.png' %}" alt="Instagram"></a>                
+            </div>
+            <a href="#" class="top-button text-white d-mb-none">Back to top <img src="{% static 'lux/img/top.png' %}" alt="Top"></a>
+            <a href="#" class="top-button d-mb-block"><img src="{% static 'lux/img/top-circle.png' %}" alt="Top"></a>
+        </div>
+        <p class="copy-text text-center text-white mb-0">
+            Copyright © 2021 Luxury Dubai Properties, managed by AAJ Property - All Rights Reserved.
+        </p>
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'lux/js/main.js' %}"></script>
+</body>
+</html>

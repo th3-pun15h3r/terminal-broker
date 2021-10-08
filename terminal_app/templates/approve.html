@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5 border rounded-3 border-secondary text-center">
+<form action="" method="POST">
+{% csrf_token %}
+<table>
+<tr>
+{% for i in sign_up%}
+<td>{{i.full_name}}</td>
+   {% endfor %}
+   </tr>
+   </table>
+</form>
+</div>
+{% endblock body %}

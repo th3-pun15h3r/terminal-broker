@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container">
+<div class="row justify-content-center">
+   <div class="col-md-6">
+   <form method="POST" action="{% url 'login_view' %}" class="login-from">
+    {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="login_email" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="login_password" id="exampleInputPassword1">
+      </div>
+      <button type="submit" name="login_submit" class="btn btn-dark">Submit</button>
+    </form>
+    
+   </div>
+</div>
+
+</div>
+
+{% endblock body %}

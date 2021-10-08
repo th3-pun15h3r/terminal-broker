@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<div class="mian-sign container mt-5 border rounded-3 border-secondary">
+<form action="{% url 'edit_signup' pk=pk %}" method="POST" enctype='multipart/form-data'>
+{% csrf_token %}
+   <div class="container">
+      <input type="hidden" name="id" value="{{pk}}">
+      <div class="row pt-3 pb-3">
+         <div class="col-md-12">
+            <div class="row">
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Full Name:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                     {{form.full_name}}
+               </div> 
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">First Name:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.first_name}}
+               </div> 
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Last Name:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.last_name}}
+               </div>
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Contact Number:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.contact_no}}
+               </div> 
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Broker Email:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.broker_email}}
+               </div>   
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Date of Issuance of Broker Card:</label>
+               </div>
+               <input type="text" id="datepicker">
+               {% comment %} <div class="col-md-3 text-center">
+                  {{form.dateof_issuance_of_brokercard}}
+               </div> {% endcomment %}
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">BRN:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.brn}}
+               </div>
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Name of Establishment:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.name_of_the_establishment}}
+               </div>   
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Office Email:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.office_email}}
+               </div>   
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">ORN:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.orn}}
+               </div>   
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Office Address:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.office_address}}
+               </div>  
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Description Lisc:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.dec_lisc}}
+               </div>  
+               <div class="col-md-1">
+                  <label class="align-middle pt-3 sing_name">Agent Photo:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {% if form.instance.agent_photo %}
+                  <div class="box-imag">
+                     <img src="{{form.instance.agent_photo.url}}">
+                  </div>
+                  {% else %}
+                  <div class="box-imag">
+                     <img src="/static/img/logo.svg">
+                  </div>
+                  {% endif %}
+                  {{form.agent_photo}}
+               </div>
+               <div class="col-md-1">
+                  <label class="align-middle pt-3 sing_name">Company Logo:</label>
+               </div>
+               <div class="col-md-3 text-center">
+               {% if form.instance.company_logo %}
+                  <div class="box-imag">
+                     <img src="{{form.instance.company_logo.url}}">
+                  </div>
+                  {% else %}
+                  <div class="box-imag">
+                     <img src="/static/img/logo.svg">
+                  </div>
+                  {% endif %}
+                  {{form.company_logo}}
+               </div>
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Password:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.password}}
+               </div>
+               <div class="col-md-1 pe-0">
+                  <label class="align-middle pt-3 sing_name">Confirm Password:</label>
+               </div>
+               <div class="col-md-3 text-center">
+                  {{form.confirm_password}}
+               </div> 
+               <div class="col-md-12 mt-5 mb-3 text-center">
+                  <button type="submit" id="edit" name="edit_signupData" class="btn btn-dark px-5"> Save </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+   </div>
+   
+</form>
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+   function initImageUpload(box) {
+  let uploadField = box.querySelector('.image-upload');
+
+  uploadField.addEventListener('change', getFile);
+
+  function getFile(e){
+    let file = e.currentTarget.files[0];
+    checkType(file);
+  }
+  
+  function previewImage(file){
+    let thumb = box.querySelector('.js--image-preview'),
+        reader = new FileReader();
+
+    reader.onload = function() {
+      thumb.style.backgroundImage = 'url(' + reader.result + ')';
+    }
+    reader.readAsDataURL(file);
+    thumb.className += ' js--no-default';
+  }
+
+  function checkType(file){
+    let imageType = /image.*/;
+    if (!file.type.match(imageType)) {
+      throw 'Datei ist kein Bild';
+    } else if (!file){
+      throw 'Kein Bild gewählt';
+    } else {
+      previewImage(file);
+    }
+  }
+  
+}
+
+// initialize box-scope
+var boxes = document.querySelectorAll('.box');
+
+for (let i = 0; i < boxes.length; i++) {
+  let box = boxes[i];
+  initDropEffect(box);
+  initImageUpload(box);
+}
+
+
+
+/// drop-effect
+function initDropEffect(box){
+  let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
+  
+  // get clickable area for drop effect
+  area = box.querySelector('.js--image-preview');
+  area.addEventListener('click', fireRipple);
+  
+  function fireRipple(e){
+    area = e.currentTarget
+    // create drop
+    if(!drop){
+      drop = document.createElement('span');
+      drop.className = 'drop';
+      this.appendChild(drop);
+    }
+    // reset animate class
+    drop.className = 'drop';
+    
+    // calculate dimensions of area (longest side)
+    areaWidth = getComputedStyle(this, null).getPropertyValue("width");
+    areaHeight = getComputedStyle(this, null).getPropertyValue("height");
+    maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(areaHeight, 10));
+
+    // set drop dimensions to fill area
+    drop.style.width = maxDistance + 'px';
+    drop.style.height = maxDistance + 'px';
+    
+    // calculate dimensions of drop
+    dropWidth = getComputedStyle(this, null).getPropertyValue("width");
+    dropHeight = getComputedStyle(this, null).getPropertyValue("height");
+    
+    // calculate relative coordinates of click
+    // logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+    x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10)/2);
+    y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10)/2) - 30;
+    
+    // position drop and animate
+    drop.style.top = y + 'px';
+    drop.style.left = x + 'px';
+    drop.className += ' animate';
+    e.stopPropagation();
+   
+  }
+}
+
+   $(document).ready(function(){
+         $("#id_confirm_password").keyup(function(){
+            pass = $("#id_password").val()
+            pass2 = $("#id_confirm_password").val()
+               if ( pass!=pass2 ) {
+                  $(this).css('border-color','#f00')
+                  $(this).css('border-width' ,'medium')
+               }else{
+                  $(this).css('border-color','#000')
+                  $(this).css('border-width' ,'thin')
+               }
+         });
+});
+
+$(function() {
+    $("#datepicker").datepicker();
+});
+
+</script>
+
+
+{% endblock body %}
+

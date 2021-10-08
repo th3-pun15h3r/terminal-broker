@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+
+ <div class="row text-center">
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+</div>
+
+<form action="{% url 'email_submit' %}" method="POST">
+{% csrf_token %}
+
+  <div class="login-wap">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="input-group mb-3 main">
+        <input type="hidden" name="email" value="{{email}}"/>
+           <div class="col-md-4">
+                <label class="align-middle pt-3 sing_name">Broker Email:</label>
+            </div>
+            <div class="col-md-4 text-center">
+                {{form.broker_email}}
+            </div>
+          <div>
+            <button name="email_submit_form" class="submitbtn btn btn-dark" type="submit" id="button-addon2">Submit</button>
+          </div>
+          <!--<div class="mx-5">
+            <button name="otp_button" class="submitbtn btn btn-dark" type="submit" id="button-addon2">Next</button>
+          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+{% endblock body %}

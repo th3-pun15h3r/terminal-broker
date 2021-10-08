@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5 border rounded-3 border-secondary text-center">
+<form action="{% url 'signup' %}" method="POST">
+{% csrf_token %}
+   <div class="container text-center">
+   <input type="hidden" name="id" value="{{pk}}">
+   <div class="row pt-3 pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Full Name:</label>
+            </div>
+            <div class="col-md-8 text-center" >
+               {{form.full_name}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 1 --> 
+    
+    <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">First Name:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.first_name}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 2 -->
+
+   <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Last Name:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.last_name}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 3 -->
+
+     <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Contact Number:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.contact_no}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 4 -->
+
+   <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Broker Email:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.broker_email}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 5 -->
+
+   <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Date of Issuance of Broker Card:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.dateof_issuance_of_brokercard}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 6 -->
+
+      <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Name of Establishment:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.name_of_the_establishment}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 7 -->
+
+      <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Office Email:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.office_email}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 8 -->
+
+      <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">ORN:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.orn}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 9 -->
+
+      <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Office Address:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.office_address}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 10 -->
+
+      <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Description Lisc:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.dec_lisc}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 11 -->
+
+      <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Agent Photo:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.agent_photo}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 12 -->
+
+   <div class="row pb-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+         <div class="row">
+            <div class="col-md-4 text-center">
+               <label class="align-middle pt-3">Company Logo:</label>
+            </div>
+            <div class="col-md-8 text-center">
+               {{form.company_logo}}
+            </div>   
+         </div>
+      </div>
+      <div class="col-md-2"></div>
+   </div>
+   <!-- row 13 -->
+   <div>
+      <button type="submit" class="btn btn-dark px-5" name="save_btn">Save</button>
+   </div>
+   </div>
+   </div>
+   
+</form>
+</div>
+{% endblock body %}

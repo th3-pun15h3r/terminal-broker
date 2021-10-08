@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+<form action="{% url 'signup' %}" method="POST">
+{% csrf_token %}
+<div class="input-group mb-3">
+  <input type="text" name="brn_number" class="form-control pt-5 pb-5 fs-5" placeholder="Enter BRN Number" aria-label="BRN Number" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+</div>
+</form>
+</div>
+{% endblock body %}

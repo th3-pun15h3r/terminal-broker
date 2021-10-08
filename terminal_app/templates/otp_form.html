@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container mt-5">
+<form action="{% url 'otp_submit' %}" method="POST">
+{% csrf_token %}
+{% if messages %}
+ <div class="row text-center">
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+<input type="hidden" name="id" value="{{pk}}">
+  <div class="login-wap">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="input-group mb-3 main">
+        <input type="hidden" name="email" value="{{email}}"/>
+           <div class="col-md-4">
+                <label class="align-middle pt-3 sing_name">Enter OTP:</label>
+            </div>
+            <div class="col-md-4 text-center">
+                {{form.otp}}
+            </div>
+          <div>
+            <button name="otp_submit_form" class="submitbtn btn btn-dark" type="submit" id="button-addon2">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+{% endblock body %}

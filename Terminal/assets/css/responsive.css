@@ -1,0 +1,270 @@
+/*Medium Laptop*/
+@media only screen and (min-width: 1200px) and (max-width: 1800px){
+.step_form_inner {
+    padding: 80px 100px;
+}
+.room_count {
+    margin-right: 13px;
+}
+
+
+}
+
+/*Large Tab 1200px.*/
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+.step_form_inner {
+    padding: 50px 60px;
+}
+.step_form_select_item_cart_inner_content {
+    padding: 30px 20px;
+}
+.step_form_inner_left_item li{
+    margin-top: 30px;
+}
+.bedrooms_item p{
+    padding: 30px 35px;
+}
+.room_count{
+    margin-right: 10px;
+}
+.room_count p{
+    padding: 20px 27px;
+}
+
+}
+
+/*Tablet Layout 768px.*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .bedrooms_item, .room_count{
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .input_control_inner {
+        overflow: hidden;
+        overflow-x: scroll;
+        padding-bottom: 5px;
+    }
+    .input_control_inner::-webkit-scrollbar{
+        display: none;
+    }
+    .input_outfid{
+        margin-top: 10px;
+    }
+    .step_form_inner {
+        padding: 30px 30px;
+    }
+    
+    .step_form_inner_left_item span {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 5px;
+    }
+    
+    .step_form_inner_left_item li {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    
+    .step_form_inner_right h3 {
+        font-size: 20px;
+    }
+    
+    .step_form_select_item h4 {
+        font-size: 18px;
+    }
+    
+    .step_form_select_item {
+        margin-top: 25px;
+    }
+    
+    .step_form_select_item_cart_inner_content {
+        margin-top: 15px;
+        padding: 20px 20px;
+    }
+    
+    .step_form_select_item_cart_inner_icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .step_form_select_item_cart_inner_icon svg {
+        transform: scale(.8);
+    }
+    
+    .step_form_select_item_cart_inner_content p {
+        font-size: 16px !important;
+    }
+    
+    .boxed_btn {
+        font-size: 16px !important;
+        padding: 10px 15px;
+    }
+    
+    .step_form_select_item_cart_inner {padding-left: 10px;padding-right: 10px;}
+    .step_form_select_item_cart_inner input {
+        top: 15px;
+        left: 9px;
+    }
+    
+    .step_form_select_item_cart {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .bedrooms_item p {
+        margin-bottom: 0;
+        padding: 23px;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+    .flex_auto .room_count{
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+    .room_count p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 0;
+        padding: 25px 0;
+    }
+}
+
+/*All Mobile Device*/
+@media only screen and (max-width: 767px) {
+    .input_control_inner {
+        overflow: hidden;
+        overflow-x: scroll;
+        padding-bottom: 5px;
+    }
+    .input_control_inner::-webkit-scrollbar{
+        display: none;
+    }
+    .step_form_select_item_cart{
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .step_form_select_item_cart_inner{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .step_form_select_item_cart_inner input {
+        top: 12px;
+        left: 8px;
+    }
+    .step_form_inner {
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .step_form_inner_left {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+    
+    .step_form_inner_right {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    
+    .step_form_inner_left_item li {
+        margin-top: 0;
+        max-width: 100%;
+        flex: 0 0 auto;
+        margin-right: 20px;
+        font-size: 16px;
+    }
+    .step_form_inner_left_item {
+        display: flex;
+        max-width: 100%;
+        flex: 0 0 100%;
+        overflow-x: scroll;
+    }
+    
+    .step_form_inner_left_item span {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-right: 5px;
+    }
+    
+    .step_form_inner_right h3 {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+    
+    .step_form_select_item h4 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
+    
+    .step_form_select_item {
+        margin-top: 20px;
+    }
+    
+    .step_form_select_item_cart_inner_icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .step_form_select_item_cart_inner_icon svg {
+        transform: scale(.7);
+    }
+    
+    .step_form_select_item_cart_inner_content {
+        margin-top: 15px;
+        padding: 20px 20px;
+    }
+    
+    .step_form_select_item_cart_inner_content p {
+        font-size: 16px !important;
+    }
+    
+    .boxed_btn {
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        padding: 12px 20px;
+    }
+    .bedrooms_item, .room_count {
+        max-width: 100%;
+        flex: 0 0 auto;
+    }
+    
+    .bedrooms_item_flex, .room_count_flex {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    
+    .bedrooms_item p {
+        padding: 30px 30px;
+    }
+    
+    .room_count p {
+        font-weight: 500;
+        padding: 20px 30px;
+    }
+}
+/*Medium Mobile Device*/
+@media only screen and (max-width: 479px) {
+    .step_form_select_item_cart_inner {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    
+    .step_form_select_item_cart_inner_content {
+        padding: 30px 60px;
+        margin-top: 10px;
+    }
+    
+    .boxed_btn {
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        padding: 10px 15px;
+    }
+    .nice-select{
+        background-position: 93% 50%;
+    }
+}
